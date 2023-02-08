@@ -3,11 +3,3 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-.App{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #192540;
-}
