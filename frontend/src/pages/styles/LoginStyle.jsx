@@ -63,10 +63,14 @@ const  Div = styled.div`
             margin-top: 35px;
             border-radius: 15px;
             padding:12px 30px;
-            background: #67006e;
-            color: white;
+            border: 2px solid #67006e;
+            color: #67006e;
             cursor: pointer;
-            border: 0px;
+            transition: 0.5s;
+            &:hover{
+                background: #67006e;
+                color: #fff;
+            }
         }
     }
 }

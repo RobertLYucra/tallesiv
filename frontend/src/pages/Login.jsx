@@ -5,7 +5,7 @@ import logoImg from '../pages/4d.png'
 import Div from "../pages/styles/LoginStyle"
 import "../pages/styles/login.css"
 
-const Login = (props) => {
+const Login = () => {
 
   const navigate = useNavigate();
 
@@ -26,14 +26,6 @@ const Login = (props) => {
   //Boton para inicio de sesion
   const loginUser = (e) => {
     e.preventDefault();
-    props.list.forEach((u) => {
-      if (u.user === user && u.password === password) {
-        setLogin(login ? false : true)
-        navigate("/" + u.user)
-      } else {
-        setError("Ingrese la contraseña y usuario Correcta")
-      }
-    })
   }
 
   return (
