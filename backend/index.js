@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import useRouter from './routes/userRoute.js'
+import userRouter from './routes/userRoute.js'
+import torneoRouter from './routes/torneoRoute.js'
 
 
 const app = express();
@@ -10,7 +11,8 @@ app.use(cors())
 
 console.log("Se ejecuta en el puerto 8801")
 //Rutas de consultas
-app.use('/',useRouter)
+app.use('/',userRouter)
+app.use('/',torneoRouter )
 
 //Permite leer datos de base de datos
 

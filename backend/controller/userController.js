@@ -6,20 +6,18 @@ export const getUSers = (_, res) => {
   bd.query(q, (err, data) => {
     if (err) {return res.json()}
     else{
-      if(data){
+     
         return res.json(data);
-      }else{
-        return res.json({message:"Usuario y contraseña no coinciden"})
       }
   }
-});
+);
 };
 
 
 
 export const loginUser = (req, res) => {
   const q =
-    "select id,user, lastname from usuario where(user=? and password=?)";
+    "select user, name,lastname from usuario where(user=? and password=?)";
 
   const user = req.body.user;
   const password = req.body.password;
@@ -27,7 +25,7 @@ export const loginUser = (req, res) => {
   bd.query(q, [user, password], (err, data) => {
     if (err) {return res.json()}
     else{
-      if(data>0){
+      if(data.length>0){
         return res.json(data);
       }else{
         return res.json({message:"Usuario y contraseña no coinciden"})
@@ -50,7 +48,7 @@ export const registerUSer = (req, res) => {
   ];
 
   bd.query(q, [values], (err, data) => {
-    if (err) {return res.json(err)}
+    if (err) {return res.json({message: "Error al registrar usuario"})}
     else{
       if(data){return res.json(data)}
       else{res.json({message: "Error al registrar Usuario"})}

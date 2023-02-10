@@ -1,12 +1,24 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Routes, useParams,Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import TorneosDisponibles from './components/TorneosDisponibles'
+import TorneosPasados from './components/TorneosPasados'
 
 const Main = (props) => {
-  const id = useParams()
+  const user = useParams()
+  console.log(user)
   return (
     <div>
-      <h1>Hola buenas tardes: {id.id.toUpperCase()}</h1>
+      <Navbar user={user.user}/>
+      <div>
+      </div>
+      <Routes>
+        <Route path='/torneosPasados' element={<TorneosPasados/>}/>
+        <Route path='/torneosDisponibles' element={<TorneosDisponibles/>}/>
+        <Route path='/' element={<TorneosDisponibles/>}></Route>
+      </Routes>
     </div>
+    
   )
 }
 
