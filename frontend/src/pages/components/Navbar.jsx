@@ -1,24 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 import user from "../images/user.png"
 import "./styles.componentes/navbarStyle.css"
 import TorneosDisponibles from './TorneosDisponibles'
 
 const Navbar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-            <div className="container-fluid p-3" id="container">
-                <Link className="navbar-brand" to="/">ADYperu</Link>
+        <Nav className="navbar navbar-expand-lg navbar-light bg-light ">
+            <div className="container-fluid" id="container">
+                <Link className="navbar-brand text-light" to="/">ADYperu</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to={`/main/torneosDisponibles`}>Inicio</Link>
+                            <Link className="nav-link active text-light" aria-current="page" to={`/main/${props.user}/torneosDisponibles`}>Inicio</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Torneos anteriores</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle text-light" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Juegos
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,12 +33,6 @@ const Navbar = (props) => {
                                 <li><hr className="dropdown-divider"></hr></li>
                                 <li><Link className="dropdown-item" to="/">TODOS</Link></li>
                             </ul>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Link</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">Disabled</Link>
                         </li>
                     </ul>
                     <div className="d-flex">
@@ -50,8 +48,17 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </Nav>
     )
 }
+
+const Nav = styled.nav`
+    background: rgb(29,28,51);
+    background: linear-gradient(90deg, rgba(29,28,51,1) 13%, rgba(60,60,193,1) 56%, rgba(24,96,111,1) 100%);
+    #container{
+        color: white;
+    }
+
+`
 
 export default Navbar
