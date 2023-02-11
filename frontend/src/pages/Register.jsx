@@ -78,7 +78,7 @@ const Register = () => {
         <button className='button' onClick={handleClick}>Registrarse</button>
         <label style={{color: "red",fontSize:"12px"}}>{confirmado}</label>
 
-        <p>Ya tienes una cuenta? <Link to="/"> Iniciar sesion</Link></p>
+        <p>Ya tienes una cuenta? <Link style={{textDecoration:"none"}}to="/"> Iniciar sesion</Link></p>
       </div>
       </div>
     </Div>

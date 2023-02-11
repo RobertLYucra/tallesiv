@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import "./styles.componentes/disponibles.css"
+import valorant from "../images/dota.jpg"
 
 const TorneosDisponibles = () => {
 
@@ -12,14 +14,15 @@ const TorneosDisponibles = () => {
       setTorneos(data)
     }
     listarRicky()
-  },[])
+  },[torneos])
   return (
-    <DIV>
+    <div className='main'>
       <div className='container-main'>
       {torneos.map((torneo,i) =>{
         return(
-          <div key={i} style={{border:"1px solid red",maxWidth:"350px"}}>
+          <div key={i} style={{border:"1px solid red",maxWidth:"300px"}}>
             <div style={{display:"flex",flexDirection:"column"}}>
+            <img  alt='' src="" className={torneo.nombre} style={{width:"100%",height:"120px"}}/>
             <p>ID del Torneo: {torneo.id_torneo}</p>
             <p>VIDEOJUEGO: {torneo.nombre}</p>
             <p>Cierre de inscripción: {torneo.fecha_final}</p>
@@ -30,20 +33,9 @@ const TorneosDisponibles = () => {
         )
       })}
       </div>
-    </DIV>
+    </div>
   )
 }
 
-const DIV = styled.div`
-  display: flex;
-  justify-content: center;
-.container-main{
-  margin-top: 50px;
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-}
-  
-`
 
 export default TorneosDisponibles

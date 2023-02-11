@@ -21,7 +21,7 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Torneos anteriores</Link>
                         </li>
-                        <li className="nav-item dropdown">
+                        {/*<li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle text-light" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Juegos
                             </Link>
@@ -33,7 +33,7 @@ const Navbar = (props) => {
                                 <li><hr className="dropdown-divider"></hr></li>
                                 <li><Link className="dropdown-item" to="/">TODOS</Link></li>
                             </ul>
-                        </li>
+    </li>*/}
                     </ul>
                     <div className="d-flex">
                         <li className="nav-item dropdown" style={{listStyle: "none"}}>
