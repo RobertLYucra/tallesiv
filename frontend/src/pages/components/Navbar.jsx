@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import user from "../images/user.png"
 import "./styles.componentes/navbarStyle.css"
-import TorneosDisponibles from './TorneosDisponibles'
 
 const Navbar = (props) => {
     return (
         <Nav className="navbar navbar-expand-lg navbar-light bg-light ">
             <div className="container-fluid" id="container">
-                <Link className="navbar-brand text-light" to="/">ADYperu</Link>
+                <Link className="navbar-brand text-light" to={`/main/${props.user}/prueba`}>ADYperu</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,26 +20,20 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Torneos anteriores</Link>
                         </li>
-                        {/*<li className="nav-item dropdown">
-                            <Link className="nav-link dropdown-toggle text-light" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Juegos
-                            </Link>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" to="/">DOTA 2</Link></li>
-                                <li><Link className="dropdown-item" to="/">VALORANT</Link></li>
-                                <li><Link className="dropdown-item" to="/">CS:GO</Link></li>
-                                <li><Link className="dropdown-item" to="/">LEAGUE OF LEGEND</Link></li>
-                                <li><hr className="dropdown-divider"></hr></li>
-                                <li><Link className="dropdown-item" to="/">TODOS</Link></li>
-                            </ul>
-    </li>*/}
+                        <li className="nav-item">
+                            <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Sobre Nosotros</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Contactos</Link>
+                        </li>
                     </ul>
                     <div className="d-flex">
                         <li className="nav-item dropdown" style={{listStyle: "none"}}>
                             <img alt='' src={user} className=''  style={{maxWidth:"80px"}} id="navbarDropdown" role="button" data-bs-toggle="dropdown"/>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown" >
                                 <li><Link className="dropdown-item" to="/">{props.user.toUpperCase()}</Link></li>
-                                <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                                <li><Link className="dropdown-item" to="/">Editar perfil</Link></li>
+                                <li><Link className="dropdown-item" to="/">Mis torneos</Link></li>
                                 <li><hr className="dropdown-divider"></hr></li>
                                 <li><Link className="dropdown-item" to="/">Something else here</Link></li>
                             </ul>

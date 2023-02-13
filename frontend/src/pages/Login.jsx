@@ -17,8 +17,6 @@ const Login = () => {
   const [usuario, setUsuario] = useState()
   const [loginStatus, setLoginStatus] = useState("")
 
-  const [goMain, setGomain] = useState()
-
 
   //Funcion para capturar datos de inputs
   const handleUser = (e) => {

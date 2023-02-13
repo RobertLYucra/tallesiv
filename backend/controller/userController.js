@@ -48,10 +48,10 @@ export const registerUSer = (req, res) => {
   ];
 
   bd.query(q, [values], (err, data) => {
-    if (err) {return res.json({message: "Error al registrar usuario"})}
+    if (err) {return res.json({message: "Usuario ya existe"})}
     else{
       if(data){return res.json(data)}
-      else{res.json({message: "Error al registrar Usuario"})}
+      else{res.json({message: "Usuario ya existe"})}
     }
     
   });
