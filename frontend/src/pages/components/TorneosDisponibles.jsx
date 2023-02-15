@@ -1,31 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import "./styles.componentes/disponibles.css"
-import Prueba from '../components/Prueba'
-import styled from 'styled-components'
-import {DIV,Torneo} from ".//styles.componentes/styled"
-
+import Prueba from './Prueba'
+import { DIV, Torneo,Dic ,Img} from "./styles.componentes/Styled"
 
 
 const TorneosDisponibles = (props) => {
 
+  const btn = document.querySelectorAll(".boton")
+  function activarLink (){
+    btn.forEach((item)=>
+      item.classList.remove('active'))
+      this.classList.add('active')
+ 
+  }
+  btn.forEach((item)=>item.addEventListener('click',activarLink))
+
+  const [torneosT, setTorneosT] = useState([])
+  const [juego, setJuego] = useState("torneos")
+
+  useEffect(() => {
+    async function listarRicky() {
+      const result = await axios.get(`http://localhost:8801/${juego}`);
+      setTorneosT(result.data)
+    }
+    listarRicky()
+  }, [torneosT])
 
   return (
     <DIV className='main-t'>
+      <Dic>
+        <div className='botones'>
+          <button className='boton active' onClick={() => setJuego("torneos")} >TODO</button>
+          <button className='boton' onClick={() => setJuego("dota")} >DOTA 2</button>
+          <button className='boton' onClick={() => setJuego("valorant")} >VALORANT</button>
+          <button className='boton' onClick={() => setJuego("lol")} >LOL</button>
+          <button className='boton' onClick={() => setJuego("csgo")} >CS:GO </button>
+        </div>
+      </Dic>
       <h2 className='titulo'>Torneos Disponibles</h2>
       <div className='container-main' >
 
-        {props.lista.map((torneo, i) => {
+        {torneosT.map((torneo, i) => {
           return (
             <Torneo key={i} className='torneo'>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {/*imagen del videojuego   */}
-                <DivFondo className={torneo.nombre} />
+                <Img alt='' src={torneo.imagen} className={torneo.nombre} />
                 <p>ID del Torneo: {torneo.id_torneo}</p>
                 <p>VIDEOJUEGO: {torneo.nombre}</p>
                 <p>Cierre de inscripción: {torneo.fecha_final}</p>
-                <p>Fecha del torneo: {torneo.fecha_torneo} - {torneo.hora} </p>
-                <p>{props.u}</p>
-                <hr style={{width:"100%",height:"2px"}}></hr>
+                <p style={{display:"flex",alignItems:"center",fontWeight:"bold",color:"green"}}><ion-icon style={{color:"green",marginRight:"10px",fontSize:"1.5rem"}} name="alarm-outline"></ion-icon>{torneo.fecha_torneo} - {torneo.hora} </p>
+                <hr style={{ width: "100%", height: "2px" }}></hr>
                 <Prueba idTorneo={torneo.id_torneo} u={props.userU} />
               </div>
             </Torneo>
@@ -35,14 +61,5 @@ const TorneosDisponibles = (props) => {
     </DIV>
   )
 }
-
-const DivFondo = styled.div`
-  width: 125%;
-  height: 130px;
-  background: #330033;
-  transform: translateX(-10%) translateY(-15%);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
-
-`
 
 export default TorneosDisponibles

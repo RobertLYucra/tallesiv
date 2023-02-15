@@ -28,15 +28,15 @@ const Login = () => {
 
   //Boton para inicio de sesion
 
-  
+
   const loginUser = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8801/login", { user: user, password: password })
       if (response.data.message) setLoginStatus(response.data.message)
-      else{ 
+      else {
         setUsuario(response.data[0])
-        navigate("/main/"+usuario.user)
+        navigate("/main/" + usuario.user)
       }
     } catch (e) {
       console.log(e)
@@ -52,9 +52,9 @@ const Login = () => {
           <img src={logoImg} alt=""></img>
           <input type="text" placeholder='Usuario' onChange={handleUser} name='user'></input>
           <input type="password" placeholder='Contraseña' onChange={handlePass} name='password' ></input>
-          <label style={{fontSize :"12px",color:"red"}}>{loginStatus}</label>
+          <label style={{ fontSize: "12px", color: "red" }}>{loginStatus}</label>
           <label>Aun no tienes cuenta? <Link to="/register">Registrate</Link></label>
-          <button className='inicio' onClick={loginUser} type="submit">Iniciar Sesion</button>
+          <button className='inicio' onClick={loginUser} >Iniciar Sesion</button>
         </form>
       </div>
 

@@ -2,35 +2,32 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {DIV,Torneo,Dic,Img} from "./styles.componentes/Styled"
 
-const TorneosPasados = (props) => {
+const MisTorneos = (props) => {
 
   const [torneosT, setTorneosT] = useState([])
-  const [juego, setJuego] = useState("torneospasados")
+  const [types, setTypes] = useState("pendientes")
 
   useEffect(() => {
-    async function listarRicky() {
+    async function listarTorneo() {
       try {
-        const result = await axios.get(`http://localhost:8801/${juego}`);
+        const result = await axios.post(`http://localhost:8801/${types}`,{ user: props.userU});
         setTorneosT(result.data)
       } catch (error) {
-        console.log("error")
+        console.log(error)
       }
     }
-    listarRicky()
+    listarTorneo()
   }, [torneosT])
 
   return (
       <DIV className='main-t' >
       <Dic>
         <div className='botones'>
-          <button className='btn btn-danger' onClick={() => setJuego("torneospasados")} >TODO</button>
-          <button className='btn btn-danger' onClick={() => setJuego("dotaP")} >DOTA 2</button>
-          <button className='btn btn-danger' onClick={() => setJuego("valorantP")} >VALORANT</button>
-          <button className='btn btn-danger' onClick={() => setJuego("lolP")} >LOL</button>
-          <button className='btn btn-danger' onClick={() => setJuego("csgoP")} >CS:GO </button>
+          <button className='btn btn-success' style={{width:"130px"}} onClick={() => setTypes("pendientes")} >PENDIENTES</button>
+          <button className='btn btn-danger'style={{width:"130px"}} onClick={() => setTypes("pendientesP")} >PARTICIPADOS</button>
         </div>
       </Dic>
-      <h2 className='titulo'>Torneos pasados</h2>
+      <h2 className='titulo'>Mis Torneos</h2>
         <div className='container-main'>
           {torneosT.map((torneo, i) => {
             return (
@@ -52,4 +49,4 @@ const TorneosPasados = (props) => {
   )
 }
 
-export default TorneosPasados
+export default MisTorneos
