@@ -38,10 +38,10 @@ const TorneosPasados = (props) => {
                 <div>
                   {/*imagen del videojuego   */}
                   <Img className={torneo.nombre} alt='' src={torneo.imagen} />
+                  <p style={{textAlign:"center",fontWeight:"bolder"}}>{torneo.nombre.toUpperCase()}</p>
                   <p>ID del Torneo: {torneo.id_torneo}</p>
-                  <p>VIDEOJUEGO: {torneo.nombre}</p>
                   <p>Cierre de inscripción: {torneo.fecha_final}</p>
-                  <p>Fecha del torneo: {torneo.fecha_torneo} - {torneo.hora} </p>
+                  <p style={{display:"flex",alignItems:"center",fontWeight:"bold",color:"red"}}><ion-icon style={{color:"red",marginRight:"10px",fontSize:"1.5rem"}} name="alarm-outline"></ion-icon>{torneo.fecha_torneo} - {torneo.hora} </p>
                   {/*<Prueba idTorneo={torneo.id_torneo} u={props.userU} />*/}
                 </div>
               </Torneo>

@@ -21,7 +21,7 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{marginLeft:"auto"}}>
                         <li className="nav-item">
-                            <Link className="nav-link active text-light" aria-current="page" to={`/main/${props.user}/torneosDisponibles`}>Inicio</Link>
+                            <Link className="nav-link active text-light" aria-current="page" to={`/main/${props.user}/inicio`}>Inicio</Link>
                         </li>
 
                         <li className="nav-item dropdown">

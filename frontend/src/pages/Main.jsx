@@ -5,6 +5,7 @@ import TorneosDisponibles from './components/TorneosDisponibles'
 import TorneosPasados from './components/TorneosPasados'
 import MisTorneos from './components/MisTorneos'
 import FooterComponent from './components/Footer'
+import Inicio from './components/Inicio'
 
 
 
@@ -22,7 +23,7 @@ const Main = (props) => {
         <Route path='/torneosPasados' element={<TorneosPasados  userU={user.user} />}/>
         <Route path='/torneosDisponibles' element={<TorneosDisponibles  userU={user.user} />}/>
         <Route path='/misTorneos' element={<MisTorneos  userU={user.user} />}/>
-        <Route path='/*' element={<TorneosDisponibles userU={user.user}/>}></Route>
+        <Route path='/*' element={<Inicio  userU={user.user} />}/>
       </Routes>
       <FooterComponent></FooterComponent>      
     </div>

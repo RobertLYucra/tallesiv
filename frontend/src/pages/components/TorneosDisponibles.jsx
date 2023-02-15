@@ -47,8 +47,8 @@ const TorneosDisponibles = (props) => {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {/*imagen del videojuego   */}
                 <Img alt='' src={torneo.imagen} className={torneo.nombre} />
+                <p style={{textAlign:"center",fontWeight:"bolder"}}>{torneo.nombre.toUpperCase()}</p>
                 <p>ID del Torneo: {torneo.id_torneo}</p>
-                <p>VIDEOJUEGO: {torneo.nombre}</p>
                 <p>Cierre de inscripción: {torneo.fecha_final}</p>
                 <p style={{display:"flex",alignItems:"center",fontWeight:"bold",color:"green"}}><ion-icon style={{color:"green",marginRight:"10px",fontSize:"1.5rem"}} name="alarm-outline"></ion-icon>{torneo.fecha_torneo} - {torneo.hora} </p>
                 <hr style={{ width: "100%", height: "2px" }}></hr>
