@@ -50,18 +50,20 @@ width: 100%;
   display: grid;
   place-items: center;
   margin: 20px 25px;
-  grid-template-columns: repeat(auto-fit, minmax(105px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(55px,1fr));
 
   .active{
     background: red;
     transform:translateY(-5px)
   }
   button{
-    width: 110px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin: 5px 5px;
     border-radius:9px;
     transition: 0.5s;
+    border: 1px double;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
 }
 `

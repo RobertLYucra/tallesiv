@@ -3,19 +3,25 @@ import axios from 'axios'
 import "./styles.componentes/disponibles.css"
 import Prueba from './Prueba'
 import { DIV, Torneo,Dic ,Img} from "./styles.componentes/Styled"
+import dota from  "../images/juegos/dota.jpg"
+import lol from  "../images/juegos/lol.png"
+import valorant from  "../images/juegos/valorant.png"
+import csgo from  "../images/juegos/csgo.png"
+import todo from  "../images/juegos/todo.jpg"
 
 
 const TorneosDisponibles = (props) => {
-
+  //Estilo bonton efecto
   const btn = document.querySelectorAll(".boton")
   function activarLink (){
     btn.forEach((item)=>
       item.classList.remove('active'))
       this.classList.add('active')
- 
   }
   btn.forEach((item)=>item.addEventListener('click',activarLink))
 
+
+  //Hooks
   const [torneosT, setTorneosT] = useState([])
   const [juego, setJuego] = useState("torneos")
 
@@ -31,11 +37,11 @@ const TorneosDisponibles = (props) => {
     <DIV className='main-t'>
       <Dic>
         <div className='botones'>
-          <button className='boton active' onClick={() => setJuego("torneos")} >TODO</button>
-          <button className='boton' onClick={() => setJuego("dota")} >DOTA 2</button>
-          <button className='boton' onClick={() => setJuego("valorant")} >VALORANT</button>
-          <button className='boton' onClick={() => setJuego("lol")} >LOL</button>
-          <button className='boton' onClick={() => setJuego("csgo")} >CS:GO </button>
+          <button style={{background:`url(${todo})`,backgroundSize:"cover"}} className='boton active' onClick={() => setJuego("torneos")} ></button>
+          <button style={{background:`url(${dota})`,backgroundSize:"cover"}} className='boton' onClick={() => setJuego("dota")} ></button>
+          <button style={{background:`url(${valorant})`,backgroundSize:"cover"}} className='boton' onClick={() => setJuego("valorant")} ></button>
+          <button style={{background:`url(${lol})`,backgroundSize:"cover"}} className='boton' onClick={() => setJuego("lol")} ></button>
+          <button style={{background:`url(${csgo})`,backgroundSize:"cover"}} className='boton' onClick={() => setJuego("csgo")} ></button>
         </div>
       </Dic>
       <h2 className='titulo'>Torneos Disponibles</h2>

@@ -188,3 +188,13 @@ export const miTorneoPendienteP = (req, res) => {
   }
 });
 };
+
+
+export const mejorTorneo = (_, res) => {
+  const q = "select t.id_torneo,j.imagen,j.logo ,j.nombre,date_format(date_end,'%d-%m-%Y')  as  fecha_final,date_format(t.date_torneo,'%d-%m-%Y') as  fecha_torneo, t.hora,   t.premio from torneos t inner join juegos j on t.id_juego =   j.id_juego where t.date_torneo >now() AND t.premio = (select max(premio) from torneos where date_torneo >now())"
+  
+  bd.query(q, (err, data) => {
+    if (err) {return res.json()}
+    return res.json(data);
+});
+};

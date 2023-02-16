@@ -6,8 +6,8 @@ const InicioTorneo = (props) => {
     <div>
         <h3>{props.titulo}</h3>
         <div>
-            <p>Se muestras todos los torneos disponibles, dale click aquí</p>
-            <Link to={`/main/${props.user}/torneosDisponibles`}>Torneos disponibles</Link>
+            <p>Se muestras todos los {props.titulo.toLowerCase()}, dale click aquí</p>
+            <Link to={`/main/${props.user}/${props.lc}`}>Ver más</Link>
         </div>
     </div>
   )

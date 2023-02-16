@@ -1,5 +1,5 @@
 import express from "express";
-import {getTorneos,getDota,getValorant,getLol,getCsgo,registroT,getTorneosPasados, getDotaP,getLolP,getValorantP,getCsgoP,miTorneoPendiente,miTorneoPendienteP} from '../controller/torneoController.js'
+import {getTorneos,getDota,getValorant,getLol,getCsgo,registroT,getTorneosPasados, getDotaP,getLolP,getValorantP,getCsgoP,miTorneoPendiente,miTorneoPendienteP,mejorTorneo} from '../controller/torneoController.js'
 
 const router = express.Router();
 
@@ -28,5 +28,9 @@ router.post("/inscripcion",registroT)
 //Mis torneos
 router.post("/pendientes",miTorneoPendiente)
 router.post("/pendientesP",miTorneoPendienteP)
+
+//Mejor torneo
+router.get("/mejorTorneo",mejorTorneo)
+
 
 export default router;

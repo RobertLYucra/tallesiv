@@ -19,7 +19,7 @@ const Navbar = (props) => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{marginLeft:"auto"}}>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link className="nav-link active text-light" aria-current="page" to={`/main/${props.user}/inicio`}>Inicio</Link>
                         </li>
@@ -37,16 +37,14 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Sobre Nosotros</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Contactos</Link>
-                        </li>
+                        
                     </ul>
                     <div className="d-flex">
                         <li className="nav-item dropdown" style={{ listStyle: "none" }}>
                             <img alt='' src={user} className='' style={{ maxWidth: "80px" }} id="navbarDropdown" role="button" data-bs-toggle="dropdown" />
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown" >
                                 <li><p style={{textAlign: "center",fontWeight:"bolder",color:"#330033"}}>{props.user.toUpperCase()}</p></li>
-                                <li><Link className="dropdown-item" to="/">Editar perfil</Link></li>
+                                {/*<li><Link className="dropdown-item" to="/">Editar perfil</Link></li>*/}
                                 <li><Link className="dropdown-item" to={`/main/${props.user}/misTorneos`}>Mis torneos</Link></li>
                                 <li><hr className="dropdown-divider"></hr></li>
                                 <li><Link className="dropdown-item" to="/" onClick={nobackbutton}>Cerrar sesión</Link></li>
