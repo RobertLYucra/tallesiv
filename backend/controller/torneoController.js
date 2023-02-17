@@ -1,7 +1,7 @@
 import { bd } from "../bd.js";
 
 export const getTorneos = (_, res) => {
-  const q = "select t.id_torneo,j.imagen ,j.nombre,date_format(date_end,'%d-%m-%Y')  as fecha_final,date_format(t.date_torneo,'%d-%m-%Y') as  fecha_torneo, t.hora, t.premio from torneos t inner join juegos j on t.id_juego = j.id_juego where t.date_torneo >now()"
+  const q = "select t.id_torneo,j.imagen ,j.nombre,date_format(date_end,'%d-%m-%Y')  as fecha_final,date_format(t.date_torneo,'%d-%m-%Y') as  fecha_torneo, t.hora, t.premio from torneos t inner join juegos j on t.id_juego = j.id_juego where t.date_torneo >now() order by t.premio desc"
   bd.query(q, (err, data) => {
     if (err) {return res.json()}
     else{

@@ -12,7 +12,7 @@ const Inicio = (props) => {
           <div className='texto'>
             <h2 className='title' style={{color:"#12205a"}}> ADYperu</h2>
             <p style={{margin: " 25px auto"}}>Somos una empresa encargada de organizar videojuegos para para diferentes videojuegos como <span>Dota 2</span>, <span>Valorant</span></p>
-            <TorneoMejor></TorneoMejor>
+            <TorneoMejor user={props.userU}></TorneoMejor>
           </div>
           <img alt='' className='img-portada' src={inicio}></img>
         </div>

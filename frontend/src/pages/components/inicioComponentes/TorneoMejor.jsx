@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import  axios from "axios"
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-
-const TorneoMejor = () => {
+const TorneoMejor = (props) => {
     const [mejor, setMejor] = useState([])
 
     useEffect(()=>{
@@ -28,7 +28,7 @@ const TorneoMejor = () => {
                                 <h5>{t.nombre.toUpperCase()}</h5>
                                 <p className='premio'><ion-icon name="wallet-outline"></ion-icon> S/. {t.premio}</p>
                             </div>
-                            <button type='button' className='boton'>Ver más</button>
+                            <Link  to={`/main/${props.user}/torneosDisponibles`}  className='boton'>Ver más</Link>
                         </Figure>
                     </div>
                 )
