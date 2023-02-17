@@ -66,7 +66,7 @@ export default function Prueba(props) {
       >
         <Button onClick={closeModal} style={{  }}>X</Button>
         <h2 ref={(_subtitle) => (subtitle = _subtitle)} >¿Estas seguro de participar?</h2>
-        <p>{confirmado}</p>
+        <p style={{color: "white"}}>{confirmado}</p>
         <hr style={{width:'100%',height:"2px"}}></hr>
         <Form >
           <button className='btn btn-success' type='button' onClick={handleRegister}>Si</button>

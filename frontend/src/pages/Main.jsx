@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import TorneosDisponibles from './components/TorneosDisponibles'
 import TorneosPasados from './components/TorneosPasados'
 import MisTorneos from './components/MisTorneos'
-import FooterComponent from './components/Footer'
+import FooterComponent from './components/FooterComponent'
 import Inicio from './components/Inicio'
 
 

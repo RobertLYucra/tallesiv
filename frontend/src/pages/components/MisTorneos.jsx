@@ -17,6 +17,7 @@ const MisTorneos = (props) => {
       }
     }
     listarTorneo()
+    document.title = "Mis torneos"
   }, [torneosT])
 
   return (

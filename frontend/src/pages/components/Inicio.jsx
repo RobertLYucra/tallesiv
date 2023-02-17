@@ -44,7 +44,6 @@ const Main =styled.main`
       margin-top: 25px;
       display: flex;
       justify-content:center;
-      margin-bottom: 50px;
       max-width: 95%;
       padding: 40px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;

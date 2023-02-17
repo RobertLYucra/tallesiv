@@ -36,7 +36,7 @@ const TorneosDisponibles = (props) => {
 
   return (
     <DIV className='main-t'>
-      <di className="containers">
+      <div className="containers">
         <Dic>
           <div className='botones'>
             <button style={{ background: `url(${todo})`, backgroundSize: "cover" }} className='boton active' onClick={() => setJuego("torneos")} ></button>
@@ -56,7 +56,7 @@ const TorneosDisponibles = (props) => {
                   {/*imagen del videojuego   */}
                   <Img alt='' src={torneo.imagen} className={torneo.nombre} />
                   <p style={{ textAlign: "center", fontWeight: "bolder" }}>{torneo.nombre.toUpperCase()}</p>
-                  <p>ID del Torneo: {torneo.id_torneo}</p>
+                  <p >ID: {torneo.id_torneo} _____________________ S/. {torneo.premio}</p>
                   <p>Cierre de inscripción: {torneo.fecha_final}</p>
                   <p style={{ display: "flex", alignItems: "center", fontWeight: "bold", color: "green" }}><ion-icon style={{ color: "green", marginRight: "10px", fontSize: "1.5rem" }} name="alarm-outline"></ion-icon>{torneo.fecha_torneo} - {torneo.hora} </p>
                   <hr style={{ width: "100%", height: "2px" }}></hr>
@@ -66,7 +66,7 @@ const TorneosDisponibles = (props) => {
             )
           })}
         </div>
-      </di>
+      </div>
     </DIV>
   )
 }

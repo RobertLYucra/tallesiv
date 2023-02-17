@@ -35,6 +35,7 @@ const TorneosPasados = (props) => {
       }
     }
     listarRicky()
+    document.title = "Torneos pasados"
   }, [torneosT])
 
   return (
