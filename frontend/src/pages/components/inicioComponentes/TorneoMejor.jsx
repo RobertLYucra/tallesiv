@@ -3,6 +3,7 @@ import  axios from "axios"
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+
 const TorneoMejor = (props) => {
     const [mejor, setMejor] = useState([])
 
@@ -28,7 +29,7 @@ const TorneoMejor = (props) => {
                                 <h5>{t.nombre.toUpperCase()}</h5>
                                 <p className='premio'><ion-icon name="wallet-outline"></ion-icon> S/. {t.premio}</p>
                             </div>
-                            <Link  to={`/main/${props.user}/torneosDisponibles`}  className='boton'>Ver más</Link>
+                            <Link to={`/main/${props.user}/torneosDisponibles`} className='boton'>Ver más</Link>
                         </Figure>
                     </div>
                 )
