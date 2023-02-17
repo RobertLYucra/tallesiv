@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {DIV,Torneo,Dic,Img} from "./styles.componentes/Styled"
+import { DIV, Torneo, Dic, Img } from "./styles.componentes/Styled"
 
 const MisTorneos = (props) => {
 
@@ -10,7 +10,7 @@ const MisTorneos = (props) => {
   useEffect(() => {
     async function listarTorneo() {
       try {
-        const result = await axios.post(`http://localhost:8801/${types}`,{ user: props.userU});
+        const result = await axios.post(`http://localhost:8801/${types}`, { user: props.userU });
         setTorneosT(result.data)
       } catch (error) {
         console.log(error)
@@ -20,18 +20,19 @@ const MisTorneos = (props) => {
   }, [torneosT])
 
   return (
-      <DIV className='main-t' >
-      <Dic>
-        <div className='botones'>
-          <button className='btn btn-success' style={{width:"130px"}} onClick={() => setTypes("pendientes")} >PENDIENTES</button>
-          <button className='btn btn-danger'style={{width:"130px"}} onClick={() => setTypes("pendientesP")} >PARTICIPADOS</button>
-        </div>
-      </Dic>
-      <h2 className='titulo'>Mis Torneos</h2>
+    <DIV className='main-t' >
+      <div className='containers'>
+        <Dic>
+          <div className='botones'>
+            <button className='btn btn-success' style={{ width: "130px" }} onClick={() => setTypes("pendientes")} >PENDIENTES</button>
+            <button className='btn btn-danger' style={{ width: "130px" }} onClick={() => setTypes("pendientesP")} >PARTICIPADOS</button>
+          </div>
+        </Dic>
+        <h2 className='titulo'>Mis Torneos</h2>
         <div className='container-main'>
           {torneosT.map((torneo, i) => {
             return (
-              <Torneo key={i} style={{  Width: "300px" }}>
+              <Torneo key={i} style={{ Width: "300px" }}>
                 <div>
                   {/*imagen del videojuego   */}
                   <Img className={torneo.nombre} alt='' src={torneo.imagen} />
@@ -45,7 +46,8 @@ const MisTorneos = (props) => {
             )
           })}
         </div>
-      </DIV>
+      </div>
+    </DIV>
   )
 }
 

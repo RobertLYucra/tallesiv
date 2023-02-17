@@ -14,5 +14,6 @@ export default FooterComponent
 
 const Footer = styled.footer`
     width:100%;
-    background-color: red;
+    background: #2A3B47;
+
 `

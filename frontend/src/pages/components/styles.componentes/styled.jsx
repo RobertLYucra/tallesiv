@@ -1,12 +1,22 @@
 import styled from "styled-components"
 
 export const DIV = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
   min-height: 87.7vh;
+  background: #2A3B47;
+  display: flex;
+  justify-content: center;
+ 
+  .containers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    background: #fff;
+    border-radius: 10px;
+  
   .container-main{
-    max-width: 70%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     place-items: center;
@@ -20,7 +30,7 @@ export const DIV = styled.div`
     @media screen and (max-width: 1503px) {
       max-width:85%;
     }
-  }
+  }}
   `
 
 export const Torneo = styled.div`
@@ -51,6 +61,7 @@ width: 100%;
   place-items: center;
   margin: 20px 25px;
   grid-template-columns: repeat(auto-fit, minmax(55px,1fr));
+  
 
   .active{
     background: red;

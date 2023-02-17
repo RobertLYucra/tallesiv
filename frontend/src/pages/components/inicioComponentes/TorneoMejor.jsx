@@ -12,6 +12,7 @@ const TorneoMejor = () => {
             setMejor(response.data)
         }
         getMejorTorneo()
+        document.title = "Inicio"
     })
 
     return (
@@ -25,7 +26,7 @@ const TorneoMejor = () => {
                             <img alt='' src={t.logo}></img>
                             <div className='info'>
                                 <h5>{t.nombre.toUpperCase()}</h5>
-                                <p className='premio'><ion-icon name="wallet-outline"></ion-icon>{t.premio}</p>
+                                <p className='premio'><ion-icon name="wallet-outline"></ion-icon> S/. {t.premio}</p>
                             </div>
                             <button type='button' className='boton'>Ver más</button>
                         </Figure>
