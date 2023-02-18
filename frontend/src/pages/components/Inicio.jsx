@@ -40,6 +40,7 @@ const Main =styled.main`
     justify-content: center;
     flex-direction: column;
     place-items: center;
+    border-radius: 10px;
     .portada{
       margin-top: 25px;
       display: flex;
