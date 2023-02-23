@@ -35,7 +35,7 @@ const Navbar = (props) => {
                         </li>
                         
                         <li className="nav-item">
-                            <Link className="nav-link text-light" to={`/main/${props.user}/torneosPasados`}>Sobre Nosotros</Link>
+                            <Link className="nav-link text-light" to={`/main/${props.user}/sobreNosotros`}>Sobre Nosotros</Link>
                         </li>
                         
                     </ul>

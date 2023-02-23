@@ -31,7 +31,12 @@ const Footer = styled.footer`
       align-items: center;
       justify-content: space-between;
       color: white;
+      @media screen and (max-width: 810px){
+        width: 95%;
+
+      }
       .contacts{
+        margin-left: 20px;
         p{
           display: flex;
           align-items: center;

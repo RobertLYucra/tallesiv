@@ -41,29 +41,32 @@ const Main =styled.main`
     flex-direction: column;
     place-items: center;
     border-radius: 10px;
-    @media screen and (max-width: 1200px){
-          max-width: 800px;
-    }      
-    @media screen and (max-Width: 810px){
-        width: 100%;
-      }
+    transition: 0.5s;
+    @media screen and (max-width: 1199px) {
+      width: 900px;
+    }
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
     .portada{
       margin-top: 25px;
       display: flex;
       justify-content:center;
-      max-width: 100%;
+      max-width: 95%;
       padding: 40px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       border-radius: 25px;
-      @media screen and (max-Width: 1210px){
+      transition: 0.5s;
+      @media screen and (max-Width: 900px){
         flex-direction: column-reverse;
         justify-content:  center;
         align-items: center;
       }
-
+      
 
       .texto{
         max-width: 420px;
+        margin: 15px;
         .title{
           text-align:center;
         }
@@ -71,24 +74,23 @@ const Main =styled.main`
       .img-portada{
         max-width: 600px;
         border-radius: 15px;
-        @media screen and (max-width: 992px){
-          
+        transition: 0.5s ease;
+        @media screen and (max-width: 557px){
+          width: 300px;
         }
       }
     }
-    
   }
   .cards{
-    display: grid;
+    display: flex;
     max-width: 1110px;
     place-items: center;
     margin-top: 50px;
-    margin-bottom: 35px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    @media screen and (max-Width: 810px){
-        display: flex;
-        flex-direction: column;
-      } 
+    @media screen and (max-width: 557px) {
+      flex-direction: column;
+    }
+    
+    
 
   }
 `
