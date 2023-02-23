@@ -33,12 +33,17 @@ export const Div = styled.div`
             width: 65%;
             padding: 5px 10px;
             border-radius: 6px;
-            border: 2px solid #67006e;
+            border: 3px solid #67006e;
             color: #67006e;
             cursor: pointer;
             transition: 0.5s;
             margin-top: 35px;
             margin-bottom: 20px;
+            font-weight: bolder;
+            &:hover{
+                background: #67006e;
+                color: white;
+            }
         }
     }
 

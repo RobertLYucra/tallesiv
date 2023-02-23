@@ -6,8 +6,6 @@ const  Div = styled.div`
     place-items: center;
     background-image: radial-gradient(circle at 50% 50%, #787874 0, #505467 25%, #1f3259 50%, #00154b 75%, #00003e 100%);
     .form{
-
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +13,15 @@ const  Div = styled.div`
     border: 3px solid white;
     overflow: hidden;
     background: white;
+    @media screen and (max-width: 655px) {
+        flex-direction: column;
+    }
     img{
-        max-width:450px;
+        max-width:100%;
         overflow:hidden;
+        @media screen and (max-width: 655px) {
+    }
+        
     }
 
     form{
@@ -44,6 +48,9 @@ const  Div = styled.div`
            border-radius: 15px;
            margin-bottom: 35px;
            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+           @media screen and (max-width: 655px) {
+            display: none;
+    }
 
         }
         input{
