@@ -41,12 +41,13 @@ export const Torneo = styled.div`
     margin: 10px;
     transition: .5s ease;
     overflow: hidden;
-    width: 320px;
+    max-width: 320px;
     &:hover{
         transform: scale(1.01);
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
-    @media screen and (max-width: 840px) {
+    @media screen and (max-width: 420px) {
+      width: 270px;
     }
   `
 
@@ -84,4 +85,8 @@ export const Img = styled.img`
   height: 150px;
   transform: translateX(-7%) translateY(-15%);
 
+  @media screen and (max-width: 420px) {
+    width: 280px;
+
+}
 `

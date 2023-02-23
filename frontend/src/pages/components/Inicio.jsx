@@ -11,7 +11,7 @@ const Inicio = (props) => {
         <div className='portada'>
           <div className='texto'>
             <h2 className='title' style={{color:"#12205a"}}> ADYperu</h2>
-            <p style={{margin: " 25px auto"}}>Somos una empresa encargada de organizar videojuegos para para diferentes videojuegos como <span>Dota 2</span>, <span>Valorant</span></p>
+            <p style={{margin: " 25px auto"}}>Somos una empresa encargada de organizar videojuegos para para diferentes videojuegos como <b>Dota 2, Valorant, League of Legend y CS:GO</b></p>
             <TorneoMejor user={props.userU}></TorneoMejor>
           </div>
           <img alt='' className='img-portada' src={inicio}></img>
@@ -41,19 +41,26 @@ const Main =styled.main`
     flex-direction: column;
     place-items: center;
     border-radius: 10px;
+    @media screen and (max-width: 1200px){
+          max-width: 800px;
+    }      
+    @media screen and (max-Width: 810px){
+        width: 100%;
+      }
     .portada{
       margin-top: 25px;
       display: flex;
       justify-content:center;
-      max-width: 95%;
+      max-width: 100%;
       padding: 40px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       border-radius: 25px;
-      @media screen and (max-Width: 900px){
+      @media screen and (max-Width: 1210px){
         flex-direction: column-reverse;
         justify-content:  center;
         align-items: center;
       }
+
 
       .texto{
         max-width: 420px;
@@ -69,14 +76,19 @@ const Main =styled.main`
         }
       }
     }
+    
   }
   .cards{
     display: grid;
     max-width: 1110px;
     place-items: center;
     margin-top: 50px;
+    margin-bottom: 35px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    
+    @media screen and (max-Width: 810px){
+        display: flex;
+        flex-direction: column;
+      } 
 
   }
 `

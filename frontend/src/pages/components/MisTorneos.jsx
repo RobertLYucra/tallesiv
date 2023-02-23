@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { DIV, Torneo, Dic, Img } from "./styles.componentes/Styled"
+import Confirmacion from "../components/addcomponents/Confirmacion"
 
 const MisTorneos = (props) => {
 
@@ -37,11 +38,12 @@ const MisTorneos = (props) => {
                 <div>
                   {/*imagen del videojuego   */}
                   <Img className={torneo.nombre} alt='' src={torneo.imagen} />
-                  <p>ID del Torneo: {torneo.id_torneo}</p>
-                  <p>VIDEOJUEGO: {torneo.nombre}</p>
+                  <p style={{ textAlign: "center", fontWeight: "bolder" }}>{torneo.nombre.toUpperCase()}</p>
+                  <p >ID: {torneo.id_torneo} _____________________ S/. {torneo.premio}</p>
                   <p>Cierre de inscripción: {torneo.fecha_final}</p>
-                  <p>Fecha del torneo: {torneo.fecha_torneo} - {torneo.hora} </p>
-                  {/*<Prueba idTorneo={torneo.id_torneo} u={props.userU} />*/}
+                  <p style={{ display: "flex", alignItems: "center", fontWeight: "bold", color: "green" }}><ion-icon style={{ color: "green", marginRight: "10px", fontSize: "1.5rem" }} name="alarm-outline"></ion-icon>{torneo.fecha_torneo} - {torneo.hora} </p>
+                  <hr style={{ width: "100%", height: "2px" }}></hr>
+                  <Confirmacion idTorneo={torneo.id_torneo} u={props.userU}></Confirmacion>
                 </div>
               </Torneo>
             )
