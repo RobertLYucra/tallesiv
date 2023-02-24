@@ -27,7 +27,7 @@ const Main = (props) => {
         <Route path='/sobreNosotros' element={<SobreNosotros  userU={user.user} />}/>
         <Route path='/*' element={<Inicio  userU={user.user} />}/>
       </Routes>
-      <FooterComponent></FooterComponent>      
+      <FooterComponent user={user.user}></FooterComponent>      
     </div>
     
   )

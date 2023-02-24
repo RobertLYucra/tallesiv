@@ -14,13 +14,23 @@ export const Div = styled.div`
     border: 3px solid white;
     overflow: hidden;
     background: white;
-
+    @media screen and (max-width: 655px) {
+        flex-direction: column;
+    }
+    img{
+        max-width: 100%;
+        @media screen and (max-width: 655px) {
+            height:200px;
+            width: 100%;
+    }
+    }
     .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0 25px;
+       
         
         .entrada{
             margin : 10px auto;

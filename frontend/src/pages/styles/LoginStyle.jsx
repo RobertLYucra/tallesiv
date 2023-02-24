@@ -20,6 +20,8 @@ const  Div = styled.div`
         max-width:100%;
         overflow:hidden;
         @media screen and (max-width: 655px) {
+           height:200px;
+           width: 100%;
     }
         
     }

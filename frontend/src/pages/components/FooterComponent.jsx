@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import Correo from "../components/addcomponents/Correo"
 
-const FooterComponent = () => {
+const FooterComponent = (props) => {
   return (
     <Footer>
         <div className='foot-c'>
           <h2>ADYperu</h2>
+          <Correo user={props.user}></Correo>
           <div className='contacts'>
                 <p> <ion-icon name="mail-outline"></ion-icon> adyperu@gmail.com</p>
                 <p><ion-icon name="call-outline"></ion-icon>(01)77451</p>
